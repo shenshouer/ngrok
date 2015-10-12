@@ -32,3 +32,9 @@ are only available by creating an account on ngrok.com. If you need them, [creat
 
 ## Developing on ngrok
 [ngrok developer's guide](docs/DEVELOPMENT.md)
+
+
+### test
+
+sudo ngrokd -tlsKey="/Users/goyoo/workspace/go/src/ngrok/assets/server/tls/snakeoil.key" -tlsCrt="/Users/goyoworkspace/go/src/ngrok/assets/server/tls/snakeoil.crt" -domain="example.com"
+sudo ngrokd -domain="example.com"
