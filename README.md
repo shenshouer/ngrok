@@ -15,6 +15,8 @@
 
 GOOS=linux GOARCH=amd64 ./build.sh
 
+编译后所需要的静态二进制文件以及依赖文件都位于当前目录的bin目录下
+
 ## 部署
 部署依赖assets中的资源文件
 
