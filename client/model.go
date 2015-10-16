@@ -110,6 +110,7 @@ func newClientModel(config *Configuration, ctl mvc.Controller) *ClientModel {
 			panic(err)
 		}
 	}
+	m.tlsConfig.InsecureSkipVerify = true
 
 	// configure TLS SNI
 	m.tlsConfig.ServerName = serverName(m.serverAddr)

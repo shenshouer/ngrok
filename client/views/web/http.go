@@ -9,13 +9,14 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
-	"ngrok/client/assets"
+//	"ngrok/client/assets"
 	"ngrok/client/mvc"
 	"ngrok/log"
 	"ngrok/proto"
 	"ngrok/util"
 	"strings"
 	"unicode/utf8"
+	"io/ioutil"
 )
 
 type SerializedTxn struct {
@@ -241,7 +242,8 @@ func (whv *WebHttpView) register() {
 			}
 		}()
 
-		pageTmpl, err := assets.Asset("assets/client/page.html")
+//		pageTmpl, err := assets.Asset("assets/client/page.html")
+		pageTmpl, err := ioutil.ReadFile("assets/client/page.html")
 		if err != nil {
 			panic(err)
 		}
