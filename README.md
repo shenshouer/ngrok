@@ -8,6 +8,9 @@
 * 新增支持跨平台编译
 * 修改ngrok客户端连接ngrokd服务端失败的bug
 
+注意:    
+因为bug,去掉了源代码中的验证功能,后续将完善.
+
 ## 编译
 
 GOOS=linux GOARCH=amd64 ./build.sh
