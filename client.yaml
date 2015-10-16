@@ -1,2 +1,2 @@
-server_addr: shenshouer.cn:4443
+server_addr: example.com:4443
 trust_host_root_certs: false

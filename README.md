@@ -1,4 +1,30 @@
 # ngrok - Introspected tunnels to localhost ([homepage](https://ngrok.com))
+
+## 基于官方ngrok修改
+
+* 修改依赖包问题
+* 修改编译,去掉静态资源文件编译到二进制文件
+* 修改编译产出物为静态二进制文件,基于Dockerfile打包镜像更小
+* 新增支持跨平台编译
+* 修改ngrok客户端连接ngrokd服务端失败的bug
+
+## 编译
+
+GOOS=linux GOARCH=amd64 ./build.sh
+
+## 部署
+部署依赖assets中的资源文件
+
+部署服务端
+cd ./bin && ./ngrokd -domain="example.com"
+
+客户端
+cd ./bin && ./ngrok -config=client.yaml 30001
+
+
+
+
+
 ### "I want to securely expose a web server to the internet and capture all traffic for detailed inspection and replay"
 ![](https://ngrok.com/static/img/overview.png)
 
@@ -32,9 +58,3 @@ are only available by creating an account on ngrok.com. If you need them, [creat
 
 ## Developing on ngrok
 [ngrok developer's guide](docs/DEVELOPMENT.md)
-
-
-### test
-
-sudo ngrokd -tlsKey="/Users/goyoo/workspace/go/src/ngrok/assets/server/tls/snakeoil.key" -tlsCrt="/Users/goyoworkspace/go/src/ngrok/assets/server/tls/snakeoil.crt" -domain="example.com"
-sudo ngrokd -domain="example.com"
